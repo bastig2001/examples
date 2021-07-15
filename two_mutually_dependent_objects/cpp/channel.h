@@ -37,8 +37,8 @@ class Channel: public SendingChannel<T>, public ReceivingChannel<T> {
     std::condition_variable receiving_finishable{};
 
   public:
-    bool is_empty() const override { return msgs.empty(); }
-    bool is_not_empty() const override { return !is_empty(); }
+    bool is_empty() const { return msgs.empty(); }
+    bool is_not_empty() const { return !is_empty(); }
 
     void send(const std::vector<T>& new_msgs) override {
         std::lock_guard channel_lck{channel_mtx};
