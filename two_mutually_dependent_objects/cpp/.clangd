@@ -1,2 +1,0 @@
-CompilerFlags:
-    Add: [-std=c++17, -Werror]
